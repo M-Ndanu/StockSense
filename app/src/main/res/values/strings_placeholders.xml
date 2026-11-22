@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="screen_login">Login and Sign-up</string>
+    <string name="screen_main">Stock and Sales</string>
+    <string name="screen_add_edit_product">Add or Edit Product</string>
+    <string name="screen_product_details">Product Details</string>
+    <string name="screen_new_sale">New Sale</string>
+    <string name="screen_sale_summary">Sale Summary</string>
+    <string name="screen_stock">Stock List</string>
+    <string name="screen_sales">Sales List</string>
+</resources>
