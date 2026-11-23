@@ -1,15 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:fillViewport="true"
+    android:background="@color/white"
+    tools:context=".LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screen_login"
-        android:textSize="24sp"
-        android:textColor="@color/stocksense_text" />
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <!-- Screen Title & Subtitle -->
+        <TextView
+            android:id="@+id/tvLoginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_login"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_dark"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tvLoginSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_login"
+            android:textSize="16sp"
+            android:textColor="@color/stocksense_text"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Username Input -->
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_username"
+            android:inputType="textPersonName"
+            android:autofillHints="username"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Email Input, Only visible in Sign-Up mode -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            android:autofillHints="emailAddress"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Confirm Password Input which is Only visible in Sign-Up mode -->
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_confirm_password"
+            android:inputType="textPassword"
+            android:autofillHints="password"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:layout_marginBottom="24dp" />
+
+        <!-- (Log In / Sign Up button) -->
+        <Button
+            android:id="@+id/btnSubmitAuth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/btn_login"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Toggle Link between Login and Sign-Up -->
+        <TextView
+            android:id="@+id/tvToggleAuthMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/toggle_to_signup"
+            android:textColor="@color/stocksense_primary"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Row layout representing a single past sale in the Sales ListView -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="14dp"
+    android:background="@color/white">
+
+    <!-- Left container holding the sale reference ID and formatted timestamp -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Displays the sale number -->
+        <TextView
+            android:id="@+id/tvSaleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_dark" />
+
+        <!-- Displays the date and time the sale was recorded -->
+        <TextView
+            android:id="@+id/tvSaleDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/stocksense_text"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Displays the total sale amount in whole shillings -->
+    <TextView
+        android:id="@+id/tvSaleTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/stocksense_primary" />
+
+</LinearLayout>

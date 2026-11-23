@@ -1,15 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Detail screen showing full information for one selected product with Edit and Delete actions -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:fillViewport="true"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screen_product_details"
-        android:textSize="24sp"
-        android:textColor="@color/stocksense_text" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <!-- Screen header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_product_details"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_dark"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Displays the product name -->
+        <TextView
+            android:id="@+id/tvDetailName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_text"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Displays the product category -->
+        <TextView
+            android:id="@+id/tvDetailCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/stocksense_dark"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Displays the unit selling price -->
+        <TextView
+            android:id="@+id/tvDetailPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_primary"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Displays the current stock quantity -->
+        <TextView
+            android:id="@+id/tvDetailStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/stocksense_text"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Displays the reorder level threshold -->
+        <TextView
+            android:id="@+id/tvDetailReorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/stocksense_text"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Button to open AddEditProductActivity pre-filled with this product -->
+        <Button
+            android:id="@+id/btnEditProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/btn_edit_product"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Button to delete this product (blocked if it has past sales) -->
+        <Button
+            android:id="@+id/btnDeleteProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/btn_delete_product"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_alert"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Main layout for the Sales fragment displaying past transactions -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Top toolbar displaying the Past Sales title -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarSales"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screen_sales"
-        android:textSize="24sp"
-        android:textColor="@color/stocksense_text" />
+        android:minHeight="56dp"
+        android:background="@color/stocksense_dark"
+        app:title="@string/title_sales_list"
+        app:titleTextColor="@color/white" />
+
+    <!-- Message displayed when no sales have been recorded yet -->
+    <TextView
+        android:id="@+id/tvEmptySales"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="@string/empty_sales_message"
+        android:textSize="16sp"
+        android:textColor="@color/stocksense_text"
+        android:visibility="gone" />
+
+    <!-- Scrollable list of the owner's past sales -->
+    <ListView
+        android:id="@+id/lvSales"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/stocksense_dark"
+        android:dividerHeight="1dp" />
 
 </LinearLayout>

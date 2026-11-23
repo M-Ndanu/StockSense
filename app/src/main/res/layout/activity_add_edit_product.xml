@@ -1,15 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Form layout used for both adding a new product and editing an existing product -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:fillViewport="true"
+    android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/screen_add_edit_product"
-        android:textSize="24sp"
-        android:textColor="@color/stocksense_text" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</LinearLayout>
+        <!-- Screen header that switches between Add Product and Edit Product -->
+        <TextView
+            android:id="@+id/tvAddEditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_add_product"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/stocksense_dark"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Input field for product name -->
+        <EditText
+            android:id="@+id/etProductName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_product_name"
+            android:inputType="textCapWords"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Input field for product category -->
+        <EditText
+            android:id="@+id/etCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_category"
+            android:inputType="textCapWords"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Input field for selling price in whole shillings -->
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_price"
+            android:inputType="number"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Input field for current available stock quantity -->
+        <EditText
+            android:id="@+id/etStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_stock"
+            android:inputType="number"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="14dp" />
+
+        <!-- Input field for low-stock reorder threshold -->
+        <EditText
+            android:id="@+id/etReorderLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:hint="@string/hint_reorder_level"
+            android:inputType="number"
+            android:textColor="@color/stocksense_text"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Button to validate inputs and save the product to SQLite -->
+        <Button
+            android:id="@+id/btnSaveProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/btn_save_product"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_primary"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

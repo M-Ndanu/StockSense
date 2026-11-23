@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_container"
+<!-- Main dashboard layout hosting the Stock and Sales fragments with bottom navigation tabs -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Container that displays either StockFragment or SalesFragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom navigation bar for switching between Stock and Sales lists -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/stocksense_dark"
+        android:padding="4dp">
+
+        <!-- Switches the main container to the Stock list fragment -->
+        <Button
+            android:id="@+id/btnNavStock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:text="@string/nav_stock"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_primary"
+            android:textStyle="bold"
+            android:layout_marginEnd="4dp" />
+
+        <!-- Switches the main container to the Past Sales list fragment -->
+        <Button
+            android:id="@+id/btnNavSales"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:text="@string/nav_sales"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/stocksense_dark"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
