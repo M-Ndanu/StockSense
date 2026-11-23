@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Stocksense: Person 1 (Data) strings. Put in app/src/main/res/values/. Every name starts with data_ so it cannot clash with other members' files. -->
 <resources>
+    <string name="data_err_empty_sale">Add at least one product to the sale.</string>
+    <string name="data_err_sale_not_found">Sale not found.</string>
+    <string name="data_err_save_failed">Could not save the sale.</string>
+    <string name="data_err_quantity">Quantity must be above zero.</string>
+    <string name="data_err_product_missing">A product in this sale could not be found.</string>
+    <string name="data_err_not_enough_stock">Not enough stock for %1$s. Only %2$d left.</string>
 </resources>
