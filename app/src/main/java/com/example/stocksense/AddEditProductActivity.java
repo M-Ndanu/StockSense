@@ -27,6 +27,7 @@ public class AddEditProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_product);
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         dbHelper = new DatabaseHelper(this);
         SharedPreferences prefs = getSharedPreferences(LoginActivity.PREF_NAME, MODE_PRIVATE);

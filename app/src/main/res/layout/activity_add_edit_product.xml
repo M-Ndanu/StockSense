@@ -1,27 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Form layout used for both adding a new product and editing an existing product -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@color/white">
+    android:background="@color/stocksense_dark"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!-- Green header with back arrow and the screen title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/stocksense_dark"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/polish_desc_back"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/tvAddEditTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_add_product"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="24dp">
-
-        <!-- Screen header that switches between Add Product and Edit Product -->
-        <TextView
-            android:id="@+id/tvAddEditTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_add_product"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/stocksense_dark"
-            android:layout_marginBottom="20dp" />
 
         <!-- Input field for product name -->
         <EditText
@@ -97,3 +121,4 @@
 
     </LinearLayout>
 </ScrollView>
+</LinearLayout>
