@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -209,6 +210,8 @@ public class StockFragment extends Fragment {
             TextView tvPrice = itemView.findViewById(R.id.tvItemPrice);
             TextView tvStock = itemView.findViewById(R.id.tvItemStock);
             TextView tvBadge = itemView.findViewById(R.id.tvLowStockBadge);
+            ImageButton btnMore = itemView.findViewById(R.id.btnItemMore);
+            btnMore.setOnClickListener(v -> showProductPopupMenu(v, item));
 
             tvName.setText(item.getName());
             tvCategory.setText(item.getCategory());

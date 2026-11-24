@@ -25,4 +25,6 @@
     <string name="sales_report_total">Total: KSh %1$d</string>
     <string name="sales_report_low_stock">Low stock: %1$s</string>
     <string name="sales_report_low_none">Low stock: none</string>
+    <string name="polish_desc_item_more">More options</string>
+    <string name="polish_desc_item_image">Product picture</string>
 </resources>

@@ -9,6 +9,15 @@
     android:padding="14dp"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/ivItemImage"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/img_placeholder"
+        android:contentDescription="@string/polish_desc_item_image"
+        android:scaleType="centerCrop" />
+
     <!-- Left container holding product name, category, and price -->
     <LinearLayout
         android:layout_width="0dp"
@@ -78,5 +87,15 @@
             android:layout_marginTop="4dp"
             android:visibility="gone" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnItemMore"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/polish_desc_item_more"
+        android:focusable="false"
+        android:src="@drawable/ic_more_vert" />
 
 </LinearLayout>
