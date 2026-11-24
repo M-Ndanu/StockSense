@@ -41,10 +41,10 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:minWidth="64dp"
+                android:minWidth="96dp"
                 android:orientation="horizontal"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp">
+                android:paddingStart="28dp"
+                android:paddingEnd="28dp">
 
                 <ImageView
                     android:id="@+id/ivNavStock"
@@ -71,10 +71,10 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
-                android:minWidth="64dp"
+                android:minWidth="96dp"
                 android:orientation="horizontal"
-                android:paddingStart="18dp"
-                android:paddingEnd="18dp">
+                android:paddingStart="28dp"
+                android:paddingEnd="28dp">
 
                 <ImageView
                     android:id="@+id/ivNavSales"
