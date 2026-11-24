@@ -34,6 +34,7 @@ public class NewSaleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d("lifecycle", "NewSaleActivity onCreate invoked");
         setContentView(R.layout.activity_new_sale);
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         spProducts = findViewById(R.id.spProducts);
         etQuantity = findViewById(R.id.etQuantity);
