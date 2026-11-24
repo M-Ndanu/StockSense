@@ -26,6 +26,7 @@ public class SaleSummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d("lifecycle", "SaleSummaryActivity onCreate invoked");
         setContentView(R.layout.activity_sale_summary);
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
         TextView tvSaleInfo = findViewById(R.id.tvSaleInfo);
         ListView lvSummaryItems = findViewById(R.id.lvSummaryItems);
