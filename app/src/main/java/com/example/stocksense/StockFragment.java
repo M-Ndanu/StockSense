@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -115,6 +116,25 @@ public class StockFragment extends Fragment {
         });
     }
 
+    // Picks a picture for a product by looking for a keyword in its name. Falls back to a default picture.
+    private int imageForProduct(String productName) {
+        String name = productName.toLowerCase();
+        if (name.contains("sugar")) return R.drawable.img_sugar;
+        if (name.contains("oil")) return R.drawable.img_cooking_oil;
+        if (name.contains("flour")) return R.drawable.img_wheat_flour;
+        if (name.contains("rice")) return R.drawable.img_rice;
+        if (name.contains("milk")) return R.drawable.img_milk;
+        if (name.contains("bread")) return R.drawable.img_bread;
+        if (name.contains("soap")) return R.drawable.img_bar_soap;
+        if (name.contains("toothpaste")) return R.drawable.img_toothpaste;
+        if (name.contains("egg")) return R.drawable.img_eggs;
+        if (name.contains("tea")) return R.drawable.img_tea_leaves;
+        if (name.contains("salt")) return R.drawable.img_salt;
+        if (name.contains("soda") || name.contains("drink") || name.contains("cola") || name.contains("juice")) return R.drawable.img_soft_drink;
+        if (name.contains("margarine")) return R.drawable.img_margarine;
+        return R.drawable.img_default;
+    }
+
     // Displays a Popup Menu on a tapped product with View Details, Edit, and Delete actions.
     private void showProductPopupMenu(View anchorView, Product product) {
         PopupMenu popup = new PopupMenu(requireContext(), anchorView);
@@ -181,6 +201,7 @@ public class StockFragment extends Fragment {
     private class StockAdapter extends BaseAdapter {
 
         // Returns the number of displayed products.
+        // Returns the number of displayed products.
         @Override
         public int getCount() {
             return displayedProducts.size();
@@ -212,6 +233,8 @@ public class StockFragment extends Fragment {
             TextView tvBadge = itemView.findViewById(R.id.tvLowStockBadge);
             ImageButton btnMore = itemView.findViewById(R.id.btnItemMore);
             btnMore.setOnClickListener(v -> showProductPopupMenu(v, item));
+            ImageView ivImage = itemView.findViewById(R.id.ivItemImage);
+            ivImage.setImageResource(imageForProduct(item.getName()));
 
             tvName.setText(item.getName());
             tvCategory.setText(item.getCategory());
