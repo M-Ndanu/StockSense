@@ -1,52 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Main dashboard layout hosting the Stock and Sales fragments with bottom navigation tabs -->
+<!-- Main dashboard layout hosting the Stock and Sales fragments with a floating pill-shaped bottom navigation -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/stocksense_dark">
 
     <!-- Container that displays either StockFragment or SalesFragment -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@color/white" />
 
-    <!-- Bottom navigation bar for switching between Stock and Sales lists -->
+    <!-- Strip that holds the floating pill navigation -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@color/stocksense_dark"
-        android:padding="4dp">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
-        <!-- Switches the main container to the Stock list fragment -->
-        <Button
-            android:id="@+id/btnNavStock"
-            android:layout_width="0dp"
+        <!-- The dark pill -->
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:text="@string/nav_stock"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/stocksense_primary"
-            android:textStyle="bold"
-            android:layout_marginEnd="4dp" />
+            android:background="@drawable/bg_nav_pill"
+            android:orientation="horizontal"
+            android:padding="6dp">
 
-        <!-- Switches the main container to the Past Sales list fragment -->
-        <Button
-            android:id="@+id/btnNavSales"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="48dp"
-            android:text="@string/nav_sales"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/stocksense_dark"
-            android:textStyle="bold"
-            android:layout_marginStart="4dp" />
+            <!-- Stock tab: orange pill with icon and label when selected -->
+            <LinearLayout
+                android:id="@+id/navStock"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_nav_selected"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minWidth="64dp"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp">
 
+                <ImageView
+                    android:id="@+id/ivNavStock"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/nav_stock"
+                    android:src="@drawable/ic_nav_stock" />
+
+                <TextView
+                    android:id="@+id/tvNavStock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/nav_stock"
+                    android:textColor="@color/stocksense_text"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Sales tab: icon only when not selected -->
+            <LinearLayout
+                android:id="@+id/navSales"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:minWidth="64dp"
+                android:orientation="horizontal"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp">
+
+                <ImageView
+                    android:id="@+id/ivNavSales"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="@string/nav_sales"
+                    android:src="@drawable/ic_nav_sales" />
+
+                <TextView
+                    android:id="@+id/tvNavSales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/nav_sales"
+                    android:textColor="@color/stocksense_text"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
